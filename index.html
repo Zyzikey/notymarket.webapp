@@ -14,12 +14,20 @@
         <img src="logo.png" alt="Логотип" style="width: 50px; height: 50px;">
         <h2>Форма объявления</h2>
         <form action="#" method="post">
-            <select class="typeSelector" name="category" id="category">
-                <option class="typeOption" value="vehicles">Автомобили</option>
-                <option class="typeOption" value="personal_items">Личные вещи</option>
-            </select>
+            <div class="selectWrapper">
+                <select class="typeSelector" name="category" id="category">
+                    <option value="vehicles">Автомобили</option>
+                    <option value="personal_items">Личные вещи</option>
+                </select>
+                <div class="selectorArrow"></div>
+            </div>
+            
             <div class="vehicleContainer" id="vehicleFields" style="display: none;">
-                <input class="inputTextField" type="text" name="carMake" id="carMake" placeholder="Марка автомобиля">
+                <div class="selectWrapper">
+                    <select class="typeSelector" name="category" id="marksSelector" placeholdfer="Марка автомобиля">
+                    </select>
+                    <div class="selectorArrow"></div>
+                </div>
                 <input class="inputTextField" type="text" name="carModel" id="carModel" placeholder="Модель автомобиля">
                 <input class="inputTextField" type="text" name="startYear" id="startYear" placeholder="Год от">
                 <input class="inputTextField" type="text" name="endYear" id="endYear" placeholder="Год до">

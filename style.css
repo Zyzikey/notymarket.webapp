@@ -15,14 +15,46 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.selectWrapper {
+    position: relative; 
+    width: inherit;
+}
+
 .typeSelector {
     -webkit-appearance: initial;
     width: 100%;
-    text-indent: 10px;
     padding: 10px;
     margin: 10px 0;
     border: none;
     border-radius: 5px;
+
+    /*6 9 10 15 14 9*/
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 25px;
+    transition: transform 0.3s ease;
+
+}
+
+.selectorArrow {
+    position: absolute;
+    top: 50%; 
+    right: 10px; 
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
+    border-top: 5px solid black;
+    transition: transform 0.3s ease;
+}
+
+.typeSelector:focus + .selectorArrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.t2ypeSelector:active {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 12 9 8 12 12"></polygon></svg>'); /* SVG перевернутый треугольник */
 }
 
 .vehicleContainer {
