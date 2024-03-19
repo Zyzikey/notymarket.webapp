@@ -29,7 +29,7 @@ select {
     border-radius: 5px;
 }
 
-input[type="text"] {
+.inputTextField {
     width: -webkit-fill-available;
     padding: 10px 10px 10px 10px;
     margin: 10px 0;
