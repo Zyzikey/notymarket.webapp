@@ -23,9 +23,15 @@ select {
     border-radius: 5px;
 }
 
+.vehicleContainer {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
 input[type="text"] {
-    width: 95%;
-    padding: 10px;
+    width: -webkit-fill-available;
+    padding: 10px 10px 10px 10px;
     margin: 10px 0;
     border: none;
     border-radius: 5px;
