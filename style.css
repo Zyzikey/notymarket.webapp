@@ -16,6 +16,7 @@ body {
 }
 
 .typeSelector {
+    -webkit-appearance: initial;
     width: 100%;
     text-indent: 10px;
     padding: 10px;
