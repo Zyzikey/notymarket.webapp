@@ -15,8 +15,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.typeSelector, .typeOption {
+.typeSelector {
     width: 100%;
+    text-indent: 10px;
     padding: 10px;
     margin: 10px 0;
     border: none;
