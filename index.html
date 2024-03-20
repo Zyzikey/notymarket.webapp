@@ -10,7 +10,7 @@
 </head>
 <body>
 
- <div class="container">
+    <div class="container">
         <img src="logo.png" alt="Логотип" style="width: 50px; height: 50px;">
         <h2>Форма объявления</h2>
         <form action="#" method="post">
@@ -23,12 +23,19 @@
             </div>
             
             <div class="vehicleContainer" id="vehicleFields" style="display: none;">
+
                 <div class="selectWrapper">
                     <select class="typeSelector" name="category" id="marksSelector" placeholdfer="Марка автомобиля">
                     </select>
                     <div class="selectorArrow"></div>
                 </div>
-                <input class="inputTextField" type="text" name="carModel" id="carModel" placeholder="Модель автомобиля">
+
+                <div class="selectWrapper">
+                    <select class="typeSelector" name="carModel" id="modelsSelector" placeholdfer="Марка автомобиля">
+                    </select>
+                    <div class="selectorArrow"></div>
+                </div>
+
                 <input class="inputTextField" type="text" name="startYear" id="startYear" placeholder="Год от">
                 <input class="inputTextField" type="text" name="endYear" id="endYear" placeholder="Год до">
                 <input class="inputTextField" type="text" name="engineVolume" id="engineVolume" placeholder="Объем двигателя">
@@ -59,5 +66,6 @@
         </form>
     </div>
     <script src="app.js"></script>
+    <script src="modelCatalog.js"></script>
 </body>
 </html>
