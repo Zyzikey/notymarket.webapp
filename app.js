@@ -22,6 +22,9 @@ document.getElementById('body').addEventListener('touchstart', function() {
 
     select = document.activeElement;
     select.blur();
+
+    body = document.getElementById('body');
+    body.focus();
 });
 
 function updateCities() {
