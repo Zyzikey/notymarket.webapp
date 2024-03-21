@@ -12,9 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
+document.getElementById('body').addEventListener('touchstart', function() {
+    console.log('touchstart');
+    var selectedCollection = document.getElementsByTagName('select');
+    var selected = [...selectedCollection];
+    selected.forEach(select => {
+        select.blur();
+    });
+});
+
 function updateCities() {
     var citySelector = document.getElementById('citySelector');
     const options = CITIES;
+    console.log(CITIES);
 
     const none_option = document.createElement('option');
     none_option.text = 'Любой город';
@@ -210,8 +220,7 @@ document.getElementById('citySelector').addEventListener('focus', function() {
 
 document.getElementById('citySelector').addEventListener('focusout', function() {
     var select = document.getElementById('citySelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_citySelector;
+    select.selectedIndex = last_citySelector;
 });
 
 //#endregion
@@ -234,8 +243,7 @@ document.getElementById('categorySelector').addEventListener('focus', function()
 
 document.getElementById('categorySelector').addEventListener('focusout', function() {
     var select = document.getElementById('categorySelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_categorySelector;
+    select.selectedIndex = last_categorySelector;
 });
 
 //#endregion
@@ -258,8 +266,7 @@ document.getElementById('marksSelector').addEventListener('focus', function() {
 
 document.getElementById('marksSelector').addEventListener('focusout', function() {
     var select = document.getElementById('marksSelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_marksSelector;
+    select.selectedIndex = last_marksSelector;
 });
 
 //#endregion
@@ -286,8 +293,7 @@ document.getElementById('yearStartSelector').addEventListener('focus', function(
 
 document.getElementById('yearStartSelector').addEventListener('focusout', function() {
     var select = document.getElementById('yearStartSelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_yearStartSelector;
+    select.selectedIndex = last_yearStartSelector;
 });
 
 //#endregion
@@ -313,8 +319,7 @@ document.getElementById('yearEndSelector').addEventListener('focus', function() 
 
 document.getElementById('yearEndSelector').addEventListener('focusout', function() {
     var select = document.getElementById('yearEndSelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_yearEndSelector;
+    select.selectedIndex = last_yearEndSelector;
 });
 
 //#endregion
@@ -342,8 +347,7 @@ document.getElementById('volumeStartSelector').addEventListener('focus', functio
 
 document.getElementById('volumeStartSelector').addEventListener('focusout', function() {
     var select = document.getElementById('volumeStartSelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_volumeStartSelector;
+    select.selectedIndex = last_volumeStartSelector;
 });
 
 //#endregion
@@ -369,8 +373,7 @@ document.getElementById('volumeEndSelector').addEventListener('focus', function(
 
 document.getElementById('volumeEndSelector').addEventListener('focusout', function() {
     var select = document.getElementById('volumeEndSelector');
-    if (select.selectedIndex == -1)
-        select.selectedIndex = last_volumeEndSelector;
+    select.selectedIndex = last_volumeEndSelector;
 });
 
 //#endregion
