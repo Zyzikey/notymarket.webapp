@@ -214,7 +214,7 @@ function updateVolumeEnd(started = 0.5) {
 
 let last_citySelector = 0;
 
-document.getElementById('citySelector').addEventListener('12344change', function() {
+document.getElementById('citySelector').addEventListener('1234change', function() {
     var select = document.getElementById('citySelector');
     select.blur();
 });
@@ -237,19 +237,19 @@ document.getElementById('citySelector').addEventListener('1234focusout', functio
 
 let last_categorySelector = 0;
 
-document.getElementById('categorySelector').addEventListener('change', function() {
+document.getElementById('categorySelector').addEventListener('1234change', function() {
     updateFields();
     var select = document.getElementById('categorySelector');
     select.blur();
 });
 
-document.getElementById('categorySelector').addEventListener('focus', function() {
+document.getElementById('categorySelector').addEventListener('1234focus', function() {
     var select = document.getElementById('categorySelector');
     last_categorySelector = select.selectedIndex;
     select.selectedIndex = -1;
 });
 
-document.getElementById('categorySelector').addEventListener('focusout', function() {
+document.getElementById('categorySelector').addEventListener('1234focusout', function() {
     var select = document.getElementById('categorySelector');
     if (select.selectedIndex == -1)
         select.selectedIndex = last_categorySelector;
