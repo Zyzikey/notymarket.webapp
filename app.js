@@ -1,4 +1,3 @@
-//
 //import { MARKS } from "./modelCatalog.js";
 
 document.addEventListener('DOMContentLoaded', function() {
