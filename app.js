@@ -11,12 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
-document.getElementById('body').addEventListener('touchstart', function() {
+document.addEventListener('scroll', function() {
+    console.log('scroll');
     select = document.activeElement;
     select.blur();
 });
 
-document.getElementById('mainContainer').addEventListener('touchstart', function() {
+document.getElementById('body').addEventListener('touchmove', function() {
+    console.log('touchmove body');
+    select = document.activeElement;
+    select.blur();
+});
+
+document.getElementById('mainContainer').addEventListener('touchmove', function() {
+    console.log('touchmove mainContainer');
     select = document.activeElement;
     select.blur();
 });
