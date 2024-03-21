@@ -11,23 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
-document.addEventListener('scroll', function() {
-    console.log('scroll');
-    select = document.activeElement;
-    //select.blur();
-});
-
-document.getElementById('body').addEventListener('touchmove', function() {
+document.getElementById('body').addEventListener('touchstart', function() {
     console.log('touchmove body');
     select = document.activeElement;
-    //select.blur();
+    select.blur();
 });
 
-document.getElementById('mainContainer').addEventListener('touchmove', function() {
-    console.log('touchmove mainContainer');
-    select = document.activeElement;
-    //select.blur();
-});
+//#region UPDATERS
 
 function updateCities() {
     var citySelector = document.getElementById('citySelector');
@@ -210,6 +200,7 @@ function updateVolumeEnd(started = 0.5) {
 
 }
 
+//#endregion
 
 //#region categorySelector
 
@@ -284,7 +275,6 @@ document.getElementById('volumeEndSelector').addEventListener('change', function
 });
 
 //#endregion
-
 
 document.getElementById('adType').addEventListener('change', function() {
     var adType = this.value;
