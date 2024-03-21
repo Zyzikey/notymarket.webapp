@@ -13,37 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('body').addEventListener('touchstart', function() {
     //console.log('touchstart');
-    var selectedCollection = document.getElementsByTagName('select');
-    var selected = [...selectedCollection];
-    selected.forEach(select => {
-        select.blur();
-    });
+    //var selectedCollection = document.getElementsByTagName('select');
+    //var selected = [...selectedCollection];
+    //selected.forEach(select => {
+    //    select.blur();
+    //});
 
-    //select = document.activeElement;
+    select = document.activeElement;
     //select.focus();
-    //select.blur();
+    select.blur();
 
     //alert(document.activeElement);
 
     //body = document.getElementById('body');
     //body.focus();
-});
-
-document.addEventListener('click', function(e) {
-    var select = document.getElementById('citySelector');
-    var target = e.target;
-    if (!select.contains(target)) {
-        select.blur(); // Закрываем выпадающий список
-    }
-});
-
-
-document.addEventListener('touchstart', function(e) {
-    var select = document.getElementById('citySelector');
-    var target = e.target;
-    if (!select.contains(target)) {
-        select.blur(); // Закрываем выпадающий список
-    }
 });
 
 function updateCities() {
