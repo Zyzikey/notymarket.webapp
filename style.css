@@ -1,13 +1,3 @@
-select, option {
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-    user-select: none;
-
-    -webkit-appearance: none;
-    -moz-appearance: radio-container;
-    appearance: none;
-}
 
 body {
     font-family: Arial, sans-serif;
