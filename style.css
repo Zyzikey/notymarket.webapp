@@ -1,6 +1,8 @@
 
 input, textarea { transform: translateZ(0px) !important; }
-
+select{
+    font-size: 50px;
+    }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
