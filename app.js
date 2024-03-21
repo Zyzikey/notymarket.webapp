@@ -1,9 +1,5 @@
 //import { MARKS } from "./modelCatalog.js";
 
-document.getElementById('overlay').addEventListener('click', function() {
-    document.activeElement.blur(); // Закрываем выпадающий список
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     updateCities();
     updateFields(); 
