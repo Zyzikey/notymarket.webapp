@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('body').addEventListener('touchstart', function() {
-    console.log('touchmove body');
     select = document.activeElement;
     select.blur();
 });
