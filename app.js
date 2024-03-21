@@ -12,21 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('body').addEventListener('touchstart', function() {
-    //console.log('touchstart');
-    //var selectedCollection = document.getElementsByTagName('select');
-    //var selected = [...selectedCollection];
-    //selected.forEach(select => {
-    //    select.blur();
-    //});
-
     select = document.activeElement;
-    //select.focus();
     select.blur();
+});
 
-    //alert(document.activeElement);
-
-    //body = document.getElementById('body');
-    //body.focus();
+document.getElementById('mainContainer').addEventListener('touchstart', function() {
+    select = document.activeElement;
+    select.blur();
 });
 
 function updateCities() {
