@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
-document.getElementById('body').addEventListener('touchend', function() {
+document.getElementById('body').addEventListener('touchstart', function() {
     //console.log('touchstart');
     //var selectedCollection = document.getElementsByTagName('select');
     //var selected = [...selectedCollection];
@@ -20,10 +20,10 @@ document.getElementById('body').addEventListener('touchend', function() {
     //    select.blur();
     //});
 
-    //select = document.activeElement;
-    //select.blur();
+    select = document.activeElement;
+    select.blur();
 
-    alert(document.activeElement);
+    //alert(document.activeElement);
 
     //body = document.getElementById('body');
     //body.focus();
@@ -32,7 +32,6 @@ document.getElementById('body').addEventListener('touchend', function() {
 function updateCities() {
     var citySelector = document.getElementById('citySelector');
     const options = CITIES;
-    console.log(CITIES);
 
     const none_option = document.createElement('option');
     none_option.text = 'Любой город';
