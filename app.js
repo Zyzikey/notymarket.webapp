@@ -225,7 +225,7 @@ document.getElementById('citySelector').addEventListener('focus', function() {
     select.selectedIndex = -1;
 });
 
-document.getElementById('citySelector').addEventListener('focusout', function() {
+document.getElementById('citySelector').addEventListener('123focusout', function() {
     var select = document.getElementById('citySelector');
     if (select.selectedIndex == -1)
         select.selectedIndex = last_citySelector;
