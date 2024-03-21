@@ -29,6 +29,23 @@ document.getElementById('body').addEventListener('touchstart', function() {
     //body.focus();
 });
 
+document.addEventListener('click', function(e) {
+    var select = document.getElementById('citySelector');
+    var target = e.target;
+    if (!select.contains(target)) {
+        select.blur(); // Закрываем выпадающий список
+    }
+});
+
+
+document.addEventListener('touchstart', function(e) {
+    var select = document.getElementById('citySelector');
+    var target = e.target;
+    if (!select.contains(target)) {
+        select.blur(); // Закрываем выпадающий список
+    }
+});
+
 function updateCities() {
     var citySelector = document.getElementById('citySelector');
     const options = CITIES;
