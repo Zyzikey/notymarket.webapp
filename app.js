@@ -214,7 +214,7 @@ function updateVolumeEnd(started = 0.5) {
 
 let last_citySelector = 0;
 
-document.getElementById('citySelector').addEventListener('1234change', function() {
+document.getElementById('citySelector').addEventListener('12344change', function() {
     var select = document.getElementById('citySelector');
     select.blur();
 });
