@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
-document.getElementById('body').addEventListener('touchstart', function() {
+document.getElementById('body').addEventListener('touchend', function() {
     //console.log('touchstart');
     //var selectedCollection = document.getElementsByTagName('select');
     //var selected = [...selectedCollection];
@@ -20,11 +20,13 @@ document.getElementById('body').addEventListener('touchstart', function() {
     //    select.blur();
     //});
 
-    select = document.activeElement;
-    select.blur();
+    //select = document.activeElement;
+    //select.blur();
 
-    body = document.getElementById('body');
-    body.focus();
+    alert(document.activeElement);
+
+    //body = document.getElementById('body');
+    //body.focus();
 });
 
 function updateCities() {
@@ -142,7 +144,7 @@ function updateYearEnd(started = 1970) {
         Selector.appendChild(option);
     });
 
-    if (lastYearEnd <= started)
+    if (lastYearEnd >= started)
         Selector.value = lastYearEnd;
     if (Selector.value == '')
         Selector.selectedIndex = 0;
