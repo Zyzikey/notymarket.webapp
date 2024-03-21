@@ -1,10 +1,6 @@
 
 input, textarea { transform: translateZ(0px) !important; }
 
-select, option {
-    -webkit-appearance: none;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
