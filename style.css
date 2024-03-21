@@ -1,10 +1,10 @@
 
-body, html {
-    overflow: hidden;
+html {
+    overflow: hidden;    
+    position: fixed;
 }
   
 body {
-    height: 80%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
