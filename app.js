@@ -214,18 +214,18 @@ function updateVolumeEnd(started = 0.5) {
 
 let last_citySelector = 0;
 
-document.getElementById('citySelector').addEventListener('change', function() {
+document.getElementById('citySelector').addEventListener('1234change', function() {
     var select = document.getElementById('citySelector');
     select.blur();
 });
 
-document.getElementById('citySelector').addEventListener('focus', function() {
+document.getElementById('citySelector').addEventListener('1234focus', function() {
     var select = document.getElementById('citySelector');
     last_citySelector = select.selectedIndex;
     select.selectedIndex = -1;
 });
 
-document.getElementById('citySelector').addEventListener('123focusout', function() {
+document.getElementById('citySelector').addEventListener('1234focusout', function() {
     var select = document.getElementById('citySelector');
     if (select.selectedIndex == -1)
         select.selectedIndex = last_citySelector;
