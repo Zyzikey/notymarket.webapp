@@ -4054,6 +4054,8 @@ var MARK_УАЗ = [
 
 var ALL_MARKS_MODELS = [
     [
+    ],
+    [
         'Cobra'
     ],
     [

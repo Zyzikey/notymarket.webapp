@@ -14,8 +14,15 @@
         <img src="logo.png" alt="Логотип" style="width: 50px; height: 50px;">
         <h2>Форма объявления</h2>
         <form action="#" method="post">
+
             <div class="selectWrapper">
-                <select class="typeSelector" name="category" id="category">
+                <select class="Selector" name="city" id="citySelector">
+                </select>
+                <div class="selectorArrow"></div>
+            </div>
+
+            <div class="selectWrapper">
+                <select class="Selector" name="category" id="categorySelector">
                     <option value="vehicles">Автомобили</option>
                     <option value="personal_items">Личные вещи</option>
                 </select>
@@ -25,22 +32,51 @@
             <div class="vehicleContainer" id="vehicleFields" style="display: none;">
 
                 <div class="selectWrapper">
-                    <select class="typeSelector" name="category" id="marksSelector" placeholdfer="Марка автомобиля">
+                    <select class="Selector" name="mark" id="marksSelector" placeholdfer="Марка автомобиля">
                     </select>
                     <div class="selectorArrow"></div>
                 </div>
 
                 <div class="selectWrapper">
-                    <select class="typeSelector" name="carModel" id="modelsSelector" placeholdfer="Марка автомобиля">
+                    <select class="Selector" name="model" id="modelsSelector" placeholdfer="Марка автомобиля">
                     </select>
                     <div class="selectorArrow"></div>
+                </div>
+
+                <div class="selectWrapper double">
+                    <div class="doubleSelectWrapper">
+                        <select class="Selector" name="yearStart" id="yearStartSelector" placeholdfer="Год от">
+                        </select>
+                        <div class="selectorArrow leftArrow"></div>
+                    </div>
+                    
+                    <div class="doubleSelectWrapper">
+                        <select class="Selector" name="yearEnd" id="yearEndSelector" placeholdfer="Год до">
+                        </select>
+                        <div class="selectorArrow"></div>
+                    </div>
+                </div>
+
+                <div class="selectWrapper double">
+                    <div class="doubleSelectWrapper">
+                        <select class="Selector" name="volumeStart" id="volumeStartSelector" placeholdfer="Объем от">
+                        </select>
+                        <div class="selectorArrow leftArrow"></div>
+                    </div>
+                    
+                    <div class="doubleSelectWrapper">
+                        <select class="Selector" name="volumeEnd" id="volumeEndSelector" placeholdfer="Объем до">
+                        </select>
+                        <div class="selectorArrow"></div>
+                    </div>
                 </div>
 
                 <input class="inputTextField" type="text" name="startYear" id="startYear" placeholder="Год от">
                 <input class="inputTextField" type="text" name="endYear" id="endYear" placeholder="Год до">
                 <input class="inputTextField" type="text" name="engineVolume" id="engineVolume" placeholder="Объем двигателя">
             </div>
-            <div id="personalItemsFields" style="display: none;">
+
+            <div id="personalItemsFields" id="personalFields" style="display: none;">
                 <label for="adType">Тип объявления:</label>
                 <select name="adType" id="adType">
                     <option value="phone">Телефон</option>
@@ -67,5 +103,6 @@
     </div>
     <script src="app.js"></script>
     <script src="modelCatalog.js"></script>
+    <script src="citiesCatalog.js"></script>
 </body>
 </html>

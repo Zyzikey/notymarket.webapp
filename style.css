@@ -20,7 +20,17 @@ body {
     width: inherit;
 }
 
-.typeSelector {
+.double {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.doubleSelectWrapper {
+    width: 48%;
+}
+
+.Selector {
     -webkit-appearance: initial;
     width: 100%;
     padding: 10px;
@@ -28,7 +38,6 @@ body {
     border: none;
     border-radius: 5px;
 
-    /*6 9 10 15 14 9*/
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 25px;
@@ -49,12 +58,13 @@ body {
     transition: transform 0.3s ease;
 }
 
-.typeSelector:focus + .selectorArrow {
-    transform: translateY(-50%) rotate(180deg);
+.leftArrow
+{
+    left: 43%;
 }
 
-.t2ypeSelector:active {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 12 9 8 12 12"></polygon></svg>'); /* SVG перевернутый треугольник */
+.Selector:focus + .selectorArrow {
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .vehicleContainer {
