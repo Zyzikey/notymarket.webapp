@@ -13,12 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('body').addEventListener('touchstart', function() {
-    console.log('touchstart');
-    var selectedCollection = document.getElementsByTagName('select');
-    var selected = [...selectedCollection];
-    selected.forEach(select => {
-        select.blur();
-    });
+    //console.log('touchstart');
+    //var selectedCollection = document.getElementsByTagName('select');
+    //var selected = [...selectedCollection];
+    //selected.forEach(select => {
+    //    select.blur();
+    //});
+
+    select = document.activeElement;
+    select.blur();
 });
 
 function updateCities() {
@@ -220,7 +223,8 @@ document.getElementById('citySelector').addEventListener('focus', function() {
 
 document.getElementById('citySelector').addEventListener('focusout', function() {
     var select = document.getElementById('citySelector');
-    select.selectedIndex = last_citySelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_citySelector;
 });
 
 //#endregion
@@ -243,7 +247,8 @@ document.getElementById('categorySelector').addEventListener('focus', function()
 
 document.getElementById('categorySelector').addEventListener('focusout', function() {
     var select = document.getElementById('categorySelector');
-    select.selectedIndex = last_categorySelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_categorySelector;
 });
 
 //#endregion
@@ -266,7 +271,8 @@ document.getElementById('marksSelector').addEventListener('focus', function() {
 
 document.getElementById('marksSelector').addEventListener('focusout', function() {
     var select = document.getElementById('marksSelector');
-    select.selectedIndex = last_marksSelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_marksSelector;
 });
 
 //#endregion
@@ -293,7 +299,8 @@ document.getElementById('yearStartSelector').addEventListener('focus', function(
 
 document.getElementById('yearStartSelector').addEventListener('focusout', function() {
     var select = document.getElementById('yearStartSelector');
-    select.selectedIndex = last_yearStartSelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_yearStartSelector;
 });
 
 //#endregion
@@ -319,7 +326,8 @@ document.getElementById('yearEndSelector').addEventListener('focus', function() 
 
 document.getElementById('yearEndSelector').addEventListener('focusout', function() {
     var select = document.getElementById('yearEndSelector');
-    select.selectedIndex = last_yearEndSelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_yearEndSelector;
 });
 
 //#endregion
@@ -347,7 +355,8 @@ document.getElementById('volumeStartSelector').addEventListener('focus', functio
 
 document.getElementById('volumeStartSelector').addEventListener('focusout', function() {
     var select = document.getElementById('volumeStartSelector');
-    select.selectedIndex = last_volumeStartSelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_volumeStartSelector;
 });
 
 //#endregion
@@ -373,7 +382,8 @@ document.getElementById('volumeEndSelector').addEventListener('focus', function(
 
 document.getElementById('volumeEndSelector').addEventListener('focusout', function() {
     var select = document.getElementById('volumeEndSelector');
-    select.selectedIndex = last_volumeEndSelector;
+    if (select.selectedIndex == -1)
+        select.selectedIndex = last_volumeEndSelector;
 });
 
 //#endregion
