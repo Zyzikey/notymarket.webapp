@@ -1,5 +1,9 @@
 ///import { MARKS } from "./modelCatalog.js";
 
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     updateCities();
     updateFields(); 
