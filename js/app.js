@@ -9,50 +9,44 @@ tg.MainButton.text = 'Подтвердить';
 Telegram.WebApp.MainButton.onClick(function () {
     try {
     
-    var city = document.getElementById('citySelector');
-    var category = document.getElementById('categorySelector');
+        var city = document.getElementById('citySelector');
+        var category = document.getElementById('categorySelector');
+        
+        var mark = document.getElementById('marksSelector');
+        var model = document.getElementById('modelsSelector');
+        var yearStart = document.getElementById('yearStartSelector');
+        var yearEnd = document.getElementById('yearEndSelector');
+        var volumeStart = document.getElementById('volumeStartSelector');
+        var volumeEnd = document.getElementById('volumeEndSelector');
+
+        var personalType = document.getElementById('personalTypeSelector');
+        var personalProduct = document.getElementById('productListSelector');
+        var personalPrompt = document.getElementById('personalPromptSelector');
+
+        filter = `${city.value}[SEPARATOR]`;
+
+        if (category.value == 'vehicles') {
+            filter += `VEHICLES[SEPARATOR]${mark.value}[SEPARATOR]${model.value}[SEPARATOR]${yearStart.value}[SEPARATOR]${yearEnd.value}[SEPARATOR]${volumeStart.value}[SEPARATOR]${volumeEnd.value}`;
+        }
+        else {
+            if (personalType.value == 'product_list')
+                filter += `PRODUCT[SEPARATOR]${personalProduct.value}`;
+            else
+                filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
+        }
+
+        tg.sendData(filter);
+        tg.close();
     
-    var mark = document.getElementById('marksSelector');
-    var model = document.getElementById('modelsSelector');
-    var yearStart = document.getElementById('yearStartSelector');
-    var yearEnd = document.getElementById('yearEndSelector');
-    var volumeStart = document.getElementById('volumeStartSelector');
-    var volumeEnd = document.getElementById('volumeEndSelector');
-
-    var personalType = document.getElementById('personalTypeSelector');
-    var personalProduct = document.getElementById('productListSelector');
-    var personalPrompt = document.getElementById('personalPromptSelector');
-
-    filter = `${city.value}[SEPARATOR]`;
-
-    if (category.value == 'vehicles') {
-        filter += `VEHICLES[SEPARATOR]${mark.value}[SEPARATOR]${model.value}[SEPARATOR]${yearStart.value}[SEPARATOR]${yearEnd.value}[SEPARATOR]${volumeStart.value}[SEPARATOR]${volumeEnd.value}`;
-    }
-    else {
-        if (personalType.value == 'product_list')
-            filter += `PRODUCT[SEPARATOR]${personalProduct.value}`;
-        else
-            filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
-    }
-
-    tg.sendData(filter);
-    tg.close();
-    
-    } catch (e) {
+    } 
+    catch (e) {
         // инструкции для обработки ошибок
         alert(e); // передать объект исключения обработчику ошибок
     }
-    
+
 });
 
-var backgrounds = [
-  "background: -webkit-linear-gradient(310deg, #4a19dd,#dcf8f0); background: linear-gradient(310deg, #4a19dd,#dcf8f0);",
-];
 
-// Выбор случайного значения из массива backgrounds
-var randomIndex = Math.floor(Math.random() * (backgrounds.length + 1));
-var randomBackground = backgrounds[randomIndex];
-document.body.style = randomBackground;
 
 $(document).ready(function() {
     $('.js-example-basic-single').select2();
@@ -70,6 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 
     updateListProduct();
+
+    var backgrounds = [
+        "background: -webkit-linear-gradient(310deg, #4a19dd,#dcf8f0); background: linear-gradient(310deg, #4a19dd,#dcf8f0);",
+    ];
+    
+    var randomIndex = Math.floor(Math.random() * (backgrounds.length + 1));
+    var randomBackground = backgrounds[randomIndex];
+    document.body.style = randomBackground;
 
     tg.MainButton.show();
 });
