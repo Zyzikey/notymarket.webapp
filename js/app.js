@@ -3,6 +3,10 @@ tg.expand();
 
 document.getElementById('submitButton').addEventListener('click', function () {
 
+    alert('start');
+
+    try {
+    
     var city = document.getElementById('citySelector');
     var category = document.getElementById('categorySelector');
     
@@ -29,6 +33,12 @@ document.getElementById('submitButton').addEventListener('click', function () {
             filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
     }
     tg.sendData(filter);
+
+    
+    } catch (e) {
+        // инструкции для обработки ошибок
+        alert(e); // передать объект исключения обработчику ошибок
+    }
     
 });
 
