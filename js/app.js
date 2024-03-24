@@ -32,6 +32,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
         else
             filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
     }
+    
     tg.sendData(filter);
 
     
