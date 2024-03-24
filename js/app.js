@@ -1,5 +1,6 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
+tg.MainButton.text = 'Подтвердить';
 
 //document.getElementById('submitButton').addEventListener('click', function () {
 
