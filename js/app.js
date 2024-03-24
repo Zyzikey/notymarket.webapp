@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateListProduct();
 
-    tg.mainButton.show();
+    tg.MainButton.show();
 });
 
 
