@@ -79,7 +79,6 @@ function updateCities() {
 
 function updateFields() {
     var category = document.getElementById('categorySelector').value;
-    console.log(category);
     var vehicleFields = document.getElementById('vehicleFields');
     var personalFields = document.getElementById('personalFields');
 
