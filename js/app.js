@@ -1,17 +1,45 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
-tg.MainButton.textColor = '#ffffff';
-tg.MainButton.color = '#000000';
 
-let item = "Dick";
+
 let submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function () {
-    tg.sendData(item);
-});
 
-Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
+    var filter = "";
+
+    var city = document.getElementById('citySelector');
+    var category = document.getElementById('categorySelector');
+    
+    var mark = document.getElementById('categorySelector');
+    var model = document.getElementById('categorySelector');
+    var yearStart = document.getElementById('categorySelector');
+    var yearEnd = document.getElementById('categorySelector');
+    var volumeStart = document.getElementById('categorySelector');
+    var volumeEnd = document.getElementById('categorySelector');
+
+    var personalType = document.getElementById('categorySelector');
+    var personalProduct = document.getElementById('categorySelector');
+    var personalPrompt = document.getElementById('categorySelector');
+
+    filter += `Город: ${city.value}\n`;
+
+    if (category.value == 'vehicles') {
+        filter += `Марка: ${mark.value}\n`;
+        filter += `Модель: ${model.value}\n`;
+        filter += `Год: ${yearStart.value} - ${yearEnd.value}\n`;
+        filter += `Объем: ${volumeStart.value} - ${volumeEnd.value}\n`;
+    }
+    else {
+        filter += `Тип: ${mark.value}\n`;
+        if (personalType.value == 'product_list')
+            filter += `Товар: ${personalProduct.value}`;
+        else
+            filter += `Товар: ${personalPrompt.value}`;
+    }
+
+    tg.sendData(filter);
+    
 });
 
 var backgrounds = [
