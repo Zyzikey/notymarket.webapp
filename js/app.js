@@ -6,7 +6,9 @@ tg.MainButton.text = 'Подтвердить';
 
 //Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
-Telegram.WebApp.MainButton.onEvent(function () {
+//Telegram.WebApp.MainButton.onEvent(function () {
+
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
     try {
     
         var city = document.getElementById('citySelector');
