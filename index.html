@@ -35,66 +35,69 @@
             <div class="vehicleContainer" id="vehicleFields" style="display: none;">
 
                 <div class="selectWrapper">
-                    <select class="js-example-basic-single Selector" name="mark" id="marksSelector" placeholdfer="Марка автомобиля">
+                    <select class="js-example-basic-single Selector" name="mark" id="marksSelector" placeholder="Марка автомобиля">
                     </select>
                 </div>
 
                 <div class="selectWrapper">
-                    <select class="js-example-basic-single Selector" name="model" id="modelsSelector" placeholdfer="Марка автомобиля">
+                    <select class="js-example-basic-single Selector" name="model" id="modelsSelector" placeholder="Марка автомобиля">
                     </select>
                 </div>
 
                 <div class="selectWrapper double">
                     <div class="doubleSelectWrapper">
-                        <select class="js-example-basic-single Selector" name="yearStart" id="yearStartSelector" placeholdfer="Год от">
+                        <select class="js-example-basic-single Selector" name="yearStart" id="yearStartSelector" placeholder="Год от">
                         </select>
                     </div>
                     
                     <div class="doubleSelectWrapper">
-                        <select class="js-example-basic-single Selector" name="yearEnd" id="yearEndSelector" placeholdfer="Год до">
+                        <select class="js-example-basic-single Selector" name="yearEnd" id="yearEndSelector" placeholder="Год до">
                         </select>
                     </div>
                 </div>
 
                 <div class="selectWrapper double">
                     <div class="doubleSelectWrapper">
-                        <select class="js-example-basic-single Selector" name="volumeStart" id="volumeStartSelector" placeholdfer="Объем от">
+                        <select class="js-example-basic-single Selector" name="volumeStart" id="volumeStartSelector" placeholder="Объем от">
                         </select>
                     </div>
                     
                     <div class="doubleSelectWrapper">
-                        <select class="js-example-basic-single Selector" name="volumeEnd" id="volumeEndSelector" placeholdfer="Объем до">
+                        <select class="js-example-basic-single Selector" name="volumeEnd" id="volumeEndSelector" placeholder="Объем до">
                         </select>
                     </div>
                 </div>
+
             </div>
 
-            <div id="personalItemsFields" id="personalFields" style="display: none;">
-                <label for="adType">Тип объявления:</label>
-                <select name="adType" id="adType">
-                    <option value="phone">Телефон</option>
-                    <option value="appliances">Бытовая техника</option>
-                    <option value="consoles">Консоли, ноутбуки и компьютеры</option>
-                    <option value="other">Прочее</option>
-                </select>
-                <div id="phoneFields" style="display: none;">
-                    <label for="phoneModel">Модель телефона:</label>
-                    <input type="text" name="phoneModel" id="phoneModel">
-                    <label for="phoneBrand">Марка телефона:</label>
-                    <input type="text" name="phoneBrand" id="phoneBrand">
-                    <label for="phoneColor">Цвет телефона:</label>
-                    <input type="text" name="phoneColor" id="phoneColor">
-                    <label for="phonePriceFrom">Цена от:</label>
-                    <input type="text" name="phonePriceFrom" id="phonePriceFrom">
-                    <label for="phonePriceTo">Цена до:</label>
-                    <input type="text" name="phonePriceTo" id="phonePriceTo">
+            <div class="personalContainer" id="personalFields" style="display: none;">
+
+                <div class="selectWrapper">
+                    <select class="js-example-basic-single Selector" name="personalType" id="personalTypeSelector" placeholder="Выберите вариант поиска">
+                        <option value="product_list">Список товаров</option>
+                        <option value="personal_product">Свой товар</option>
+                    </select>
                 </div>
-                <!-- Другие поля для различных типов объявлений -->
+
+                <div class="selectWrapper" id="productListSelectWrapper">
+                    <select class="js-example-basic-single Selector" name="personalProduct" id="productListSelector" placeholder="Выберите товар">
+                        <option>1</option>
+                    </select>
+                </div>
+
+                <div class="selectWrapper productPromptSelectWrapper" id="productPromptSelectWrapper">
+                    <input type="text" class="promptField" name="personalPrompt" id="personalPromptSelector" placeholder="Введите название товара">
+                    </input>
+                </div>
+
             </div>
+
             <input type="submit" value="Подтвердить">
+
         </form>
     </div>
     <script src="js/app.js"></script>
+    <script src="js/personal.js"></script>
     <script src="js/modelCatalog.js"></script>
     <script src="js/citiesCatalog.js"></script>
 </body>

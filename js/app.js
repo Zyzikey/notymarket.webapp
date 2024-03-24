@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     updateYearEnd();
     updateVolumeStart();
     updateVolumeEnd();
+
+    updateListProduct();
 });
 
 
@@ -47,16 +49,14 @@ function updateFields() {
     var category = document.getElementById('categorySelector').value;
     console.log(category);
     var vehicleFields = document.getElementById('vehicleFields');
-    console.log(vehicleFields);
-    var personalItemsFields = document.getElementById('personalItemsFields');
-    console.log(personalItemsFields);
+    var personalFields = document.getElementById('personalFields');
 
     if (category === 'vehicles') {
         vehicleFields.style.display = 'block';
-        personalItemsFields.style.display = 'none';
+        personalFields.style.display = 'none';
     } else if (category === 'personal_items') {
         vehicleFields.style.display = 'none';
-        personalItemsFields.style.display = 'block';
+        personalFields.style.display = 'block';
     }
 }
 
@@ -212,6 +212,19 @@ function updateVolumeEnd(started = 0.5) {
 
 }
 
+function updateListProduct() {
+
+    const productListSelector = document.getElementById('productListSelector');
+    const options = PRODUCT_LIST;
+    productListSelector.innerHTML = '';
+
+    options.forEach(optionText => {
+        const option = document.createElement('option');
+        option.text = optionText;
+        productListSelector.appendChild(option);
+    });
+}
+
 //#endregion
 
 //#region categorySelector
@@ -278,16 +291,24 @@ $('#volumeEndSelector').on('select2:select', function(e) {
 
 //#endregion
 
-document.getElementById('adType').addEventListener('change', function() {
-    var adType = this.value;
-    var phoneFields = document.getElementById('phoneFields');
-    // Остальные поля для других типов объявлений
+//#region personalType
 
-    if (adType === 'phone') {
-        phoneFields.style.display = 'block';
-    } else {
-        phoneFields.style.display = 'none';
+$('#personalTypeSelector').on('select2:select', function(e) {
+    var select = document.getElementById('personalTypeSelector');
+    var productListSelectWrapper = document.getElementById('productListSelectWrapper');
+    var productPromptSelectWrapper = document.getElementById('productPromptSelectWrapper');
+
+    if (select.value == 'product_list')
+    {
+        productListSelectWrapper.style.display = 'flex';
+        productPromptSelectWrapper.style.display = 'none';
     }
-    // Аналогично для других типов объявлений
+    else if (select.value == 'personal_product')
+    {
+        productListSelectWrapper.style.display = 'none';
+        productPromptSelectWrapper.style.display = 'flex';
+    }
 });
 
+//#endregion
+    
