@@ -1,4 +1,19 @@
-///import { MARKS } from "./modelCatalog.js";
+let tg = window.Telegram.WebApp;
+tg.expand();
+
+tg.MainButton.textColor = '#ffffff';
+tg.MainButton.color = '#000000';
+
+let item = "Dick";
+tg.MainButton.show();
+let submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', function () {
+
+});
+
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
+    tg.sendData(item);
+});
 
 var backgrounds = [
   "background: -webkit-linear-gradient(310deg, #4a19dd,#dcf8f0); background: linear-gradient(310deg, #4a19dd,#dcf8f0);",
@@ -106,7 +121,7 @@ function updateYearStart(ended = 2030) {
     Selector.innerHTML = '';
 
     const none_option = document.createElement('option');
-    none_option.text = 'От любого года';
+    none_option.text = 'Год от';
     Selector.appendChild(none_option); 
 
     options.forEach(optionText => {
@@ -136,7 +151,7 @@ function updateYearEnd(started = 1970) {
     Selector.innerHTML = '';
 
     const none_option = document.createElement('option');
-    none_option.text = 'До любого года';
+    none_option.text = 'Год до';
     Selector.appendChild(none_option); 
 
     options.forEach(optionText => {
@@ -166,7 +181,7 @@ function updateVolumeStart(ended = 8.0) {
     Selector.innerHTML = '';
 
     const none_option = document.createElement('option');
-    none_option.text = 'От любого объема';
+    none_option.text = 'Объем от';
     Selector.appendChild(none_option); 
 
     options.forEach(optionText => {
@@ -196,7 +211,7 @@ function updateVolumeEnd(started = 0.5) {
     Selector.innerHTML = '';
 
     const none_option = document.createElement('option');
-    none_option.text = 'До любого объема';
+    none_option.text = 'Объем до';
     Selector.appendChild(none_option); 
 
     options.forEach(optionText => {
@@ -247,7 +262,7 @@ $('#marksSelector').on('select2:select', function(e) {
 
 $('#yearStartSelector').on('select2:select', function(e) {
     var select = document.getElementById('yearStartSelector');
-    if (select.value == 'От любого года')
+    if (select.value == 'Год от')
         updateYearEnd();
     else
         updateYearEnd(select.value);
@@ -259,7 +274,7 @@ $('#yearStartSelector').on('select2:select', function(e) {
 
 $('#yearEndSelector').on('select2:select', function(e) {
     var select = document.getElementById('yearEndSelector');
-    if (select.value == 'До любого года')
+    if (select.value == 'Год до')
         updateYearStart();
     else
         updateYearStart(select.value);
@@ -271,7 +286,7 @@ $('#yearEndSelector').on('select2:select', function(e) {
 
 $('#volumeStartSelector').on('select2:select', function(e) {
     var select = document.getElementById('volumeStartSelector');
-    if (select.value == 'От любого объема')
+    if (select.value == 'Объем от')
         updateVolumeEnd();
     else
         updateVolumeEnd(parseFloat(select.value));
@@ -283,7 +298,7 @@ $('#volumeStartSelector').on('select2:select', function(e) {
 
 $('#volumeEndSelector').on('select2:select', function(e) {
     var select = document.getElementById('volumeEndSelector');
-    if (select.value == 'До любого объема')
+    if (select.value == 'Объем до')
         updateVolumeStart();
     else
         updateVolumeStart(parseFloat(select.value));
@@ -311,4 +326,3 @@ $('#personalTypeSelector').on('select2:select', function(e) {
 });
 
 //#endregion
-    
