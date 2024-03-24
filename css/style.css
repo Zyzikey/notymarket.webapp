@@ -84,7 +84,7 @@ body {
     display: none;
 }
 
-input[type="submit"] {
+input[type="button"] {
     width: 100%;
     padding: 10px;
     border: none;

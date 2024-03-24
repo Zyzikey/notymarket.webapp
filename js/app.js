@@ -15,7 +15,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
 
     var personalType = document.getElementById('personalTypeSelector');
     var personalProduct = document.getElementById('productListSelector');
-    var personalPrompt = document.getElementById('personalPronptSelector');
+    var personalPrompt = document.getElementById('personalPromptSelector');
 
     filter = `${city.value}[SEPARATOR]`;
 
@@ -28,7 +28,6 @@ document.getElementById('submitButton').addEventListener('click', function () {
         else
             filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
     }
-
     tg.sendData(filter);
     
 });
