@@ -6,7 +6,7 @@ tg.MainButton.text = 'Подтвердить';
 
 //Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
-Telegram.WebApp.MainButton.onClick(function () {
+Telegram.WebApp.MainButton.onEvent(function () {
     try {
     
         var city = document.getElementById('citySelector');
@@ -34,6 +34,8 @@ Telegram.WebApp.MainButton.onClick(function () {
             else
                 filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
         }
+
+        alert(filter);
 
         tg.sendData(filter);
         tg.sendData(filter);
