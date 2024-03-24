@@ -6,8 +6,6 @@ tg.expand();
 let submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function () {
 
-    var filter = "";
-
     var city = document.getElementById('citySelector');
     var category = document.getElementById('categorySelector');
     
@@ -22,20 +20,16 @@ submitButton.addEventListener('click', function () {
     var personalProduct = document.getElementById('productListSelector');
     var personalPrompt = document.getElementById('personalPronptSelector');
 
-    filter += `Город: ${city.value}\n`;
+    filter = `${city.value}[SEPARATOR]`;
 
     if (category.value == 'vehicles') {
-        filter += `Марка: ${mark.value}\n`;
-        filter += `Модель: ${model.value}\n`;
-        filter += `Год: ${yearStart.value} - ${yearEnd.value}\n`;
-        filter += `Объем: ${volumeStart.value} - ${volumeEnd.value}\n`;
+        filter += `VEHICLES[SEPARATOR]${mark.value}[SEPARATOR]${model.value}[SEPARATOR]${yearStart.value}[SEPARATOR]${yearEnd.value}[SEPARATOR]${volumeStart.value}[SEPARATOR]${volumeEnd.value}`;
     }
     else {
-        filter += `Тип: ${mark.value}\n`;
         if (personalType.value == 'product_list')
-            filter += `Товар: ${personalProduct.value}`;
+            filter += `PRODUCT[SEPARATOR]${personalProduct.value}`;
         else
-            filter += `Товар: ${personalPrompt.value}`;
+            filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
     }
 
     tg.sendData(filter);
