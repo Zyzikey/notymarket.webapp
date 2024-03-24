@@ -25,21 +25,21 @@ submitButton.addEventListener('click', function () {
     filter += `Город: ${city.value}\n`;
 
     if (category.value == 'vehicles') {
-        filter += `Марка: ${mark.value}\n`;
-        filter += `Модель: ${model.value}\n`;
-        filter += `Год: ${yearStart.value} - ${yearEnd.value}\n`;
-        filter += `Объем: ${volumeStart.value} - ${volumeEnd.value}\n`;
+        filter += `Марка: ${mark.text}\n`;
+        filter += `Модель: ${model.text}\n`;
+        filter += `Год: ${yearStart.text} - ${yearEnd.text}\n`;
+        filter += `Объем: ${volumeStart.text} - ${volumeEnd.text}\n`;
     }
     else {
-        filter += `Тип: ${mark.value}\n`;
+        filter += `Тип: ${mark.text}\n`;
         if (personalType.value == 'product_list')
-            filter += `Товар: ${personalProduct.value}`;
+            filter += `Товар: ${personalProduct.text}`;
         else
-            filter += `Товар: ${personalPrompt.value}`;
+            filter += `Товар: ${personalPrompt.text}`;
     }
 
     tg.sendData(filter);
-    
+
 });
 
 var backgrounds = [
