@@ -36,6 +36,10 @@ Telegram.WebApp.MainButton.onClick(function () {
         }
 
         tg.sendData(filter);
+        tg.sendData(filter);
+        tg.sendData(filter);
+        tg.sendData(filter);
+        tg.sendData(filter);
         tg.close();
     
     } 
@@ -68,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var backgrounds = [
         "background: -webkit-linear-gradient(310deg, #4a19dd,#dcf8f0); background: linear-gradient(310deg, #4a19dd,#dcf8f0);",
     ];
-    
+
     var randomIndex = Math.floor(Math.random() * (backgrounds.length + 1));
     var randomBackground = backgrounds[randomIndex];
     document.body.style = randomBackground;
