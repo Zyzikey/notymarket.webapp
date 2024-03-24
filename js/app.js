@@ -1,10 +1,9 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
-document.getElementById('submitButton').addEventListener('click', function () {
+//document.getElementById('submitButton').addEventListener('click', function () {
 
-    alert('start');
-
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
     try {
     
     var city = document.getElementById('citySelector');
@@ -32,7 +31,7 @@ document.getElementById('submitButton').addEventListener('click', function () {
         else
             filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
     }
-    
+
     tg.sendData(filter);
 
     
@@ -68,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 
     updateListProduct();
+
+    tg.mainButton.show();
 });
 
 
