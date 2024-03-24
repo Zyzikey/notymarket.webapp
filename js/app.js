@@ -1,8 +1,7 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
-let submitButton = document.getElementById('submitButton');
-submitButton.addEventListener('click', function () {
+document.getElementById('submitButton').addEventListener('click', function () {
 
     var city = document.getElementById('citySelector');
     var category = document.getElementById('categorySelector');
@@ -59,9 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 
     updateListProduct();
-
-    
-    tg.MainButton.show();
 });
 
 
