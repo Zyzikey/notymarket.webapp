@@ -1,8 +1,18 @@
 ///import { MARKS } from "./modelCatalog.js";
 
+var backgrounds = [
+  "background: -webkit-linear-gradient(310deg, #4a19dd,#dcf8f0); background: linear-gradient(310deg, #4a19dd,#dcf8f0);",
+];
+
+// Выбор случайного значения из массива backgrounds
+var randomIndex = Math.floor(Math.random() * (backgrounds.length + 1));
+var randomBackground = backgrounds[randomIndex];
+document.body.style = randomBackground;
+
 $(document).ready(function() {
     $('.js-example-basic-single').select2();
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     updateCities();
@@ -15,10 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 });
 
-document.getElementById('body').addEventListener('touchstart', function() {
-    select = document.activeElement;
-    select.blur();
-});
 
 //#region UPDATERS
 
@@ -39,8 +45,11 @@ function updateCities() {
 
 function updateFields() {
     var category = document.getElementById('categorySelector').value;
+    console.log(category);
     var vehicleFields = document.getElementById('vehicleFields');
+    console.log(vehicleFields);
     var personalItemsFields = document.getElementById('personalItemsFields');
+    console.log(personalItemsFields);
 
     if (category === 'vehicles') {
         vehicleFields.style.display = 'block';
@@ -207,74 +216,64 @@ function updateVolumeEnd(started = 0.5) {
 
 //#region categorySelector
 
-document.getElementById('categorySelector').addEventListener('change', function() {
-    updateFields();
-    var select = document.getElementById('categorySelector');
-    select.blur();
+$('#categorySelector').on('select2:select', function(e) {
+    updateFields();  
 });
 
 //#endregion
 
 //#region marksSelector
 
-document.getElementById('marksSelector').addEventListener('change', function() {
-    updateModels();
-    var select = document.getElementById('marksSelector');
-    select.blur();
+$('#marksSelector').on('select2:select', function(e) {
+    updateModels(); 
 });
 
 //#endregion
 
 //#region yearStart
 
-document.getElementById('yearStartSelector').addEventListener('change', function() {
+$('#yearStartSelector').on('select2:select', function(e) {
     var select = document.getElementById('yearStartSelector');
     if (select.value == 'От любого года')
         updateYearEnd();
     else
         updateYearEnd(select.value);
-    select.blur();
-
 });
 
 //#endregion
 
 //#region yearEnd
 
-document.getElementById('yearEndSelector').addEventListener('change', function() {
+$('#yearEndSelector').on('select2:select', function(e) {
     var select = document.getElementById('yearEndSelector');
     if (select.value == 'До любого года')
         updateYearStart();
     else
         updateYearStart(select.value);
-    select.blur();
 });
 
 //#endregion
 
 //#region volumeStart
 
-document.getElementById('volumeStartSelector').addEventListener('change', function() {
+$('#volumeStartSelector').on('select2:select', function(e) {
     var select = document.getElementById('volumeStartSelector');
     if (select.value == 'От любого объема')
         updateVolumeEnd();
     else
         updateVolumeEnd(parseFloat(select.value));
-    select.blur();
-
 });
 
 //#endregion
 
 //#region volumeEnd
 
-document.getElementById('volumeEndSelector').addEventListener('change', function() {
+$('#volumeEndSelector').on('select2:select', function(e) {
     var select = document.getElementById('volumeEndSelector');
-    if (select.value == 'До любого года')
+    if (select.value == 'До любого объема')
         updateVolumeStart();
     else
         updateVolumeStart(parseFloat(select.value));
-    select.blur();
 });
 
 //#endregion

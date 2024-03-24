@@ -3,15 +3,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #7289DA; /* Цвет дискорда */
-    color: #fff;
+    
+    /*
+    
+    background: linear-gradient(334deg, rgb(137, 113, 168), rgb(0, 181, 221), rgb(126, 227, 149))
+    
+    */
+    
+    background: -webkit-linear-gradient(302deg, #72c2ff,#dfcbfe);
+    background: linear-gradient(302deg, #72c2ff,#dfcbfe);                                        
 }
 
 .container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
