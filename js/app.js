@@ -36,8 +36,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
             else
                 filter += `PRODUCT[SEPARATOR]${personalPrompt.value}`;
         }
-
-        alert(filter);
+        
         tg.sendData(filter);
         tg.close();
     
