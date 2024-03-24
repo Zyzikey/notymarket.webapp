@@ -5,10 +5,9 @@ tg.MainButton.textColor = '#ffffff';
 tg.MainButton.color = '#000000';
 
 let item = "Dick";
-tg.MainButton.show();
 let submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function () {
-
+    tg.sendData(item);
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
@@ -40,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeEnd();
 
     updateListProduct();
+
+    
+    tg.MainButton.show();
 });
 
 
