@@ -11,35 +11,35 @@ submitButton.addEventListener('click', function () {
     var city = document.getElementById('citySelector');
     var category = document.getElementById('categorySelector');
     
-    var mark = document.getElementById('categorySelector');
-    var model = document.getElementById('categorySelector');
-    var yearStart = document.getElementById('categorySelector');
-    var yearEnd = document.getElementById('categorySelector');
-    var volumeStart = document.getElementById('categorySelector');
-    var volumeEnd = document.getElementById('categorySelector');
+    var mark = document.getElementById('marksSelector');
+    var model = document.getElementById('modelsSelector');
+    var yearStart = document.getElementById('yearStartSelector');
+    var yearEnd = document.getElementById('yearEndSelector');
+    var volumeStart = document.getElementById('volumeStartSelector');
+    var volumeEnd = document.getElementById('volumeEndSelector');
 
-    var personalType = document.getElementById('categorySelector');
-    var personalProduct = document.getElementById('categorySelector');
-    var personalPrompt = document.getElementById('categorySelector');
+    var personalType = document.getElementById('personalTypeSelector');
+    var personalProduct = document.getElementById('productListSelector');
+    var personalPrompt = document.getElementById('personalPronptSelector');
 
     filter += `Город: ${city.value}\n`;
 
     if (category.value == 'vehicles') {
-        filter += `Марка: ${mark.text}\n`;
-        filter += `Модель: ${model.text}\n`;
-        filter += `Год: ${yearStart.text} - ${yearEnd.text}\n`;
-        filter += `Объем: ${volumeStart.text} - ${volumeEnd.text}\n`;
+        filter += `Марка: ${mark.value}\n`;
+        filter += `Модель: ${model.value}\n`;
+        filter += `Год: ${yearStart.value} - ${yearEnd.value}\n`;
+        filter += `Объем: ${volumeStart.value} - ${volumeEnd.value}\n`;
     }
     else {
-        filter += `Тип: ${mark.text}\n`;
+        filter += `Тип: ${mark.value}\n`;
         if (personalType.value == 'product_list')
-            filter += `Товар: ${personalProduct.text}`;
+            filter += `Товар: ${personalProduct.value}`;
         else
-            filter += `Товар: ${personalPrompt.text}`;
+            filter += `Товар: ${personalPrompt.value}`;
     }
 
     tg.sendData(filter);
-
+    
 });
 
 var backgrounds = [
