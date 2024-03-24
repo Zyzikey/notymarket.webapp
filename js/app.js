@@ -34,7 +34,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
     }
 
     tg.sendData(filter);
-
+    tg.close();
     
     } catch (e) {
         // инструкции для обработки ошибок
