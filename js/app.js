@@ -1,8 +1,6 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
-
-
 let submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function () {
 
